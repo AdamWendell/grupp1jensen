@@ -9,16 +9,35 @@
 <% include ../partials/navadmin.ejs %>
 <div class="flexbox">
 	<div class="userlist">
-		<ol>
-			<li>Bil 1</li><hr/>
-			<li>Bil 2</li>
-		</ol>
+		<form class="" action="" method="post">
+
+			<label for="sokbil">Sök bil</label>
+			<input type="text" id="sokbil" name="sokbil">
+			<button type="button" name="button">Sök</button>
+		</form>
 	</div>
-	<div class="userinfo">
-		<div class="bilinfo">
-			<img src="#" alt="bilen">
-			<p>dataljer om varje bil!</p>
-		</div>
+	<div class="bil-container">
+		<ul class="bilinfo">
+			<% bilar.forEach(function(bil) {
+				 if (bil.bil == 'bil2') {%>
+				<li>
+					<img src="/images/<%= bil.model.toLowerCase() %>.jpg" alt="bilen">
+					<p>Bil: <%= bil.bil %></p>
+					<p>Biltyp: <%= bil.biltyp %></p>
+					<p>Bilmärke: <%= bil.bilmarke %></p>
+					<p>Bilmodell: <%= bil.model %></p>
+					<p>Årsmodell: <%= bil.year %></p>
+					<p>Drivhjul: <%= bil.drivhjul %></p>
+					<p>Drivmedel: <%= bil.drivmedel %></p>
+					<p>Växellåda: <%= bil.vaxellada %></p>
+
+					<p>Dragkrok: <%= bil.dragkrok %></p>
+					<p>Reg.nr: <%= bil.regnummer %></p>
+					<p>Besiktningperiod: <%= bil.besiktningperiod[0] + 1%> - <%= bil.besiktningperiod[1] + 1%></p>
+
+				</li>
+			<% }}); %>
+		</ul>
 	</div>
 	</div>
 </div>

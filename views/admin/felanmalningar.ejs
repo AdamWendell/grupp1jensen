@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title></title>
+    	<link rel='stylesheet' href='/stylesheets/style.css' />
+  	</head>
+
+  	<body>
+    <% include ../partials/navadmin.ejs %>
+
+    	<h1>Felanmälningar</h1>
+
+      <ul>
+        <% felanmalningar.forEach(function(felanmalan) { %>
+          <li>
+            <h4><%= felanmalan.bil %></h4>
+            <p><%= felanmalan.omrade %></p>
+            <p><%= felanmalan.beskrivning %></p>
+						<% if (felanmalan.skapad) {%> <p><%= felanmalan.skapad%></p><%}%>
+            <form action="felanmalningar/<%= felanmalan.id %>" method="post">
+              <button>Klar!</button>
+            </form>
+          </li>
+        <% }); %>
+      </ul>
+
+  	</body>
+</html>

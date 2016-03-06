@@ -4,12 +4,16 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
 var routes = require('./routes/index');
 var admin = require('./routes/admin/admin');
 var anvandare = require('./routes/anvandare/anvandare')
 
 var app = express();
+
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/grupp1jensen');
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

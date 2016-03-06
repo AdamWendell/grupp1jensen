@@ -8,18 +8,18 @@
   <% include ../partials/nav %>
 
   <div>
-    <form action="">
+    <form action="felanmalan" method="post">
       <h2>Felanmälan</h2>
+      <%if (locals.thanks){%> <h4>Tack för din felanmälan</h4> <% } %>
       <div>
-        <label for="bil">Välj bil</label>
-        <select id='bil'>
-          <option>bil 1</option>
-        </select>
+        <label for="bil">Bil</label>
+        <input name="bil" id="bil"type="text" placeholder="T.ex bil51" required>
       </div>
       <br>
       <div>
-        <label for="typeof">Område</label>
-        <select name="typeof" id="typeof">
+        <label for="omrade">Område</label>
+        <select name="omrade" id="omrade" required>
+          <option selected="selected" disabled="disabled" value="">Vänligen välj</option>
           <option value="belysning">Belysning</option>
           <option value="olja">Olja</option>
           <option value="spolarvatska">Spolarvätska</option>

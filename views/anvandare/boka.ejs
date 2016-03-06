@@ -8,12 +8,13 @@
     <% include ../partials/nav %>
     <h1>Fyll i dina önskemål!</h1>
     <div>
-      <form action="">
+      <form action="" method="post">
         <div>
           <label for="from">Fr.o.m:</label>
-          <input type="date" name="from" id="from">
+          <input type="datetime-local" name="from" id="from" step="900" />
           <label for="tom">T.o.m</label>
-          <input type="date" name="tom" id="tom">
+          <input type="datetime-local" name="tom" id="tom" step="900" />
+
         </div>
         <br>
         <div>
@@ -22,12 +23,12 @@
             -Välj-
           </option>
         </select>
-        <label for="drivmedel">Drivmed</label>
+        <label for="drivmedel">Drivmedel</label>
         <select name="" id="drivmedel"><option>
           -Välj-
         </option>
       </select>
-      <label for="vaxellada">Vaxellåda</label>
+      <label for="vaxellada">Växellåda</label>
       <select name="" id="vaxellada"><option>
         -Välj-
       </option>

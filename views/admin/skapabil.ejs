@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel='stylesheet' href='/stylesheets/style.css' />
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+</head>
+<body>
+<% include ../partials/navadmin.ejs %>
+<form action="skapabil" method="post">
+  <input type="text" name="bil" id="" placeholder="Bilnamn ex. bil21"  required>
+  <select name="biltyp" id="" required>
+    <option selected="selected" disabled="disabled" value="">Biltyp</option>
+    <option value="smabil">Småbil</option>
+    <option value="kombi">Kombi</option>
+    <option value="suv">Suv</option>
+    <option value="transportbil">Transportbil</option>
+  </select>
+
+  <select name="bilmarke" id="" required>
+    <option selected="selected" disabled="disabled" value="">Bilmärke</option>
+    <option value="volvo">Volvo</option>
+    <option value="toyota">Toyota</option>
+  </select>
+
+  <select name="model" id="" required>
+    <option selected="selected" disabled="disabled" value="">Bilmodell</option>
+    <option value="auris">Auris</option>
+    <option value="v70">V70</option>
+    <option value="xc90">XC90</option>
+    <option value="proace">Proace</option>
+  </select>
+
+  <input type="text" name="year" id="" placeholder="Årsmodell" required>
+
+  <select name="drivhjul" id="" required>
+    <option selected="selected" disabled="disabled" value="">Drivhjul</option>
+    <option value="rwd">Bakhjul</option>
+    <option value="fwd">Framhjul</option>
+    <option value="4wd">Fyrhjul</option>
+  </select>
+
+
+  <select name="drivmedel" id="" required>
+    <option selected="selected" disabled="disabled" value="">Drivmedel</option>
+    <option value="disel">Diesel</option>
+    <option value="bensin">Bensin</option>
+  </select>
+
+  <select name="vaxellada" id="" required>
+    <option selected="selected" disabled="disabled" value="">Växellåda</option>
+    <option value="manuell">Manuell</option>
+    <option value="auto">Automat</option>
+  </select>
+
+  <select name="dragkrok" id="" required>
+    <option selected="selected" disabled="disabled" value="">Dragkrok</option>
+    <option value="ja">Ja</option>
+    <option value="nej">Nej</option>
+  </select>
+
+  <input type="text" name="regnummer" id="" placeholder="Reg.nr" required>
+
+  <input type="text" name="matarstallning" id="" placeholder="Mätarställning" required>
+
+  <button>Skapa bil</button>
+
+</form>
+
+</body>
+</html>
