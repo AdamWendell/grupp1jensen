@@ -5,7 +5,8 @@ var router = express.Router();
 router.get('/besiktning', function(req, res, next) {
   res.render('./admin/besiktning', 
 
-  	{ 
+  	{
+  		
   		model: 'Volvo XC60',
   		drivmedel: 'Diesel',
   		vaxellada: 'Automatic',

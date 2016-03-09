@@ -1,39 +1,49 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title></title>
-	<link rel='stylesheet' href='/stylesheets/style.css' />
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-</head>
-<body>
-<% include ../partials/navadmin.ejs %>
-<div class="flexbox">
-	<div class="userlist">
-		<ol>
-			<li>användare</li><hr/>
-			<li>användare</li>
-		</ol>
-	</div>
-	<div class="userinfo">
-		<button>Administrera</button>
-		<img src="#" alt="user">
-		<p>Namn:</p>
-		<p>Telefonenr:</p>
-		<p>Avdelning</p>
-		<p>ID-nr:</p>
-		<p>Förbrukade Km:</p>
-		<div class="bokningar">
-			<p>Bokningar</p>
-			<div class="bokdetatil"></div>
-			<p>Kommande</p>
-			<div class="bokdetatil"></div>
-			<p>Tidigare</p>
-			<div class="bokdetatil"></div>
+	<head>
+		<title></title>
+		<link rel='stylesheet' href='/stylesheets/style.css' />
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	</head>
+	<body>
+	<% include ../partials/navadmin.ejs %>
+	<div class="flexbox">
+		<div class="userlist">
+			<ol>
+
+				<% anvandare.forEach(function(anv) { %>
+				<li><a href="/admin/anvandare/<%= anv.id %>"><%= anv.name %></a></li>
+				<!--<li><a href="/admin/anvandare/<%= anv._id %>"><%= anv.name %></a></li>-->
+
+				<% }); %>
+
+			</ol>
+		</div>
+		<div class="userinfo">
+			
+			<a href="/admin/nyanvandare/"><button>Lägg till användare</button></a>
+			<a href="/admin/redigeraanvandare/<%= singel._id %>"><button>Administrera</button></a>
+
+			<img src="#" alt="user">
+			<p>Namn: <%= singel.name %></p>
+			<p>Telefonenr: <%= singel.mobil %></p>
+			<p>Avdelning: <%= singel.avdelning %></p>
+			<p>Email: <%= singel.email %></p>
+			<p>ID-nr: <%= singel.id %></p>
+			<p>Förbrukade Km: <%= singel.timesPrivate %></p>
+			<p>
+			<div class="bokningar">
+				<p>Bokningar</p>
+				<div class="bokdetatil"></div>
+				<p>Kommande</p>
+				<div class="bokdetatil"></div>
+				<p>Tidigare</p>
+				<div class="bokdetatil"></div>
 
 
+			</div>
 		</div>
 	</div>
-</div>
 
-</body>
+	</body>
 </html>

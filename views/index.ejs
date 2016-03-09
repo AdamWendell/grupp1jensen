@@ -7,12 +7,17 @@
   <body>
     <h1>Almströms Bilbokning</h1>
 
-    <form action="#">
-    	<label for="anvnamn">Användarnamn:</label><br>
-    	<input type="text" name="anvnamn" id="anvnamn" /><br><br>
+    <form action="/" method="post">
+      <% if (locals.felId) {%>
+        <p> Fel ID</p>
+      <%} else if (locals.felPw) {%>
+        <p>Fel Lösenord</p>
+      <%}%>
+    	<label for="anvnamn">Användar-ID:</label><br>
+    	<input type="text" name="anvnamn" id="anvnamn" required/><br><br>
     	<label for="password">Lösenord:</label><br>
-    	<input type="password" name="password" id="password" /><br><br>
-    	<input type="submit" name="login" id="login" value="Logga in" />
+    	<input type="password" name="password" id="password" required/><br><br>
+    	<button>Logga in</button>
 
     </form>
   </body>

@@ -36,3 +36,13 @@ exports.besiktningDates = function (str) {
 
   }
 }
+
+exports.comparer = (bokningFrom, bokningTom, reqFrom, reqTom ) => {
+ var from = reqFrom;
+ var tom = reqTom;
+ if (bokningFrom > from && bokningFrom < tom || bokningTom > from && bokningTom < tom || bokningFrom < from && bokningTom > tom) {
+   return true
+ } else {
+   return false
+ }
+}

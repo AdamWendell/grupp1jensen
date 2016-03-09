@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h2>Lägg till användare</h2>
+
+    <form action="/admin/nyanvandare" method="POST">
+
+      <% if (locals.wrongpwd) { %>
+
+      <p>Lösenordet stämmer inte</p>
+
+      <% } %>
+
+    	<label for="anvnamn">Användarnamn:</label><br>
+    	<input type="text" name="anvnamn" id="anvnamn" /><br><br>
+      <label for="anvnamn">Mobil:</label><br>
+      <input type="text" name="mobil" id="mobil" /><br><br>
+      <label for="anvnamn">Email:</label><br>
+      <input type="text" name="email" id="email" /><br><br>
+
+      <label for="avdelning">Avdelning:</label><br>
+      <select name="avdelning" id="avdelning">
+      
+        <option name="valj" id="valj" value="valj">Välj</option>
+        <option name="eoa" id="eoa" value="Ekonomi och Administration">Ekonomi och Administration</option>
+        <option name="hr" id="hr" value="HR">HR</option>
+        <option name="fom" id="fom" value="Försäljning och Marknad">Försäljning och Marknad</option>
+        <option name="service" id="service" value="Service">Service</option>
+        <option name="it" id="it" value="IT-Avdelningen">IT-Avdelningen</option>
+
+      </select><br><br>
+
+      <input type="radio" name="type" id="admin" value="true" />
+      <label for="admin">Admin</label>
+      <input type="radio" name="type" id="normal" value="false" />
+      <label for="normal">Normal</label><br><br>
+    	<label for="password">Lösenord:</label><br>
+    	<input type="password" name="password" id="password" /><br><br>
+      <label for="password">Lösenord igen:</label><br>
+      <input type="password" name="password" id="password" /><br><br>
+    	<input type="submit" name="login" id="login" value="Lägg till" />
+
+    </form>
+    <a href="/admin/anvandare"><button>Tillbaka</button></a>
+  </body>
+</html>

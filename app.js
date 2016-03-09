@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var admin = require('./routes/admin/admin');
 var anvandare = require('./routes/anvandare/anvandare')
+// var User = require('./routes/admin/nyanvmodul');
 
 var app = express();
 
@@ -28,8 +29,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/admin', admin);
-app.use('/anvandare', anvandare);
+app.use('/:userId/admin', admin);
+app.use('/:userId/anvandare', anvandare);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -61,6 +63,5 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-
 
 module.exports = app;

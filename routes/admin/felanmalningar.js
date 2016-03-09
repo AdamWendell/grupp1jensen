@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+
 var FelanmModel = require('../../model/FelanmModel');
 var dateHelper = require('../../helpers/helper').dater;
 
@@ -7,12 +8,11 @@ var dateHelper = require('../../helpers/helper').dater;
 /* GET home page. */
 router.get('/felanmalningar', function(req, res, next) {
   FelanmModel.find({klar: false}).then((felanmalningar) => {
+
     res.render('./admin/felanmalningar', {felanmalningar: felanmalningar});
   }, (err) => {});
 
 });
-
-
 
 
 router.post('/felanmalningar/:id', function (req, res, next) {

@@ -10,6 +10,11 @@ router.get('/skapabil', function(req, res, next) {
 
 router.post('/skapabil', function (req, res, next) {
   var rb = req.body;
+  if(rb.dragkrok == 'ja') {
+    rb.dragkrok = true
+  } else {
+    rb.dragkrok = false
+  }
   BilarModel.create({
     bil: rb.bil,
     biltyp: rb.biltyp,

@@ -107,8 +107,10 @@ padding: 30px;
 border:1px solid black;
 }
 .userinfo button{
+	
 	float: right;
-	margin-top: 100px
+	margin-top: 100px;
+
 }
 .userinfo img{
 		float: right;
@@ -125,7 +127,12 @@ border:1px solid black;
 }
 .bilinfo img{
 <<<<<<< HEAD
+<<<<<<< HEAD
 	float: left;
+=======
+	width: auto;
+  height: 150px;
+>>>>>>> upstream/master
 }
 .container{
 	margin:auto;
@@ -133,7 +140,7 @@ border:1px solid black;
 }
 .getbilinfo{
 	border: 3px solid green;
-	
+
 	min-height: 100px;
 }
 .kundinfo{
@@ -142,8 +149,11 @@ border:1px solid black;
 	border: 1px solid green;
 	margin-bottom: 50px;
 }
+<<<<<<< HEAD
 =======
 	width: auto;
   height: 150px;
 }
+>>>>>>> upstream/master
+=======
 >>>>>>> upstream/master

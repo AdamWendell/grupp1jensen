@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var BilarModel = require('../../model/BilarModel');
 
-
 /* GET home page. */
 router.get('/bilar', function(req, res, next) {
 
@@ -12,11 +11,11 @@ router.get('/bilar', function(req, res, next) {
 });
 
 router.post('/bilar', function(req, res, next) {
-
-  BilarModel.find({bil: req.body.sok}.then((bil) => {
-    res.render('./admin/bilar', {bilar: bil});
-  }, (err) => {}))
-})
+  console.log(req.body.sokbil)
+  BilarModel.find({bil: req.body.sokbil}).then((bil) => {
+    console.log(bil.model);
+    res.render('./admin/bilar', {bil: bil[0]});
+  }, (err) => {})})
 
 module.exports = router;
 
