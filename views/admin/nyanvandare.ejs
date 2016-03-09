@@ -7,7 +7,7 @@
   <body>
     <h2>Lägg till användare</h2>
 
-    <form action="/admin/nyanvandare" method="POST">
+    <form action="nyanvandare" method="POST">
 
       <% if (locals.wrongpwd) { %>
 
@@ -24,7 +24,7 @@
 
       <label for="avdelning">Avdelning:</label><br>
       <select name="avdelning" id="avdelning">
-      
+
         <option name="valj" id="valj" value="valj">Välj</option>
         <option name="eoa" id="eoa" value="Ekonomi och Administration">Ekonomi och Administration</option>
         <option name="hr" id="hr" value="HR">HR</option>

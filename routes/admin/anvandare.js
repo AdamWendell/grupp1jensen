@@ -8,7 +8,7 @@ router.get('/anvandare', function(req, res, next) {
 	User.find( ).then(function(anvandare) {
 
 		var obj = new Object();
-		
+
 		res.render('./admin/anvandare', {
 
 			anvandare: anvandare,
@@ -24,7 +24,7 @@ router.get('/anvandare', function(req, res, next) {
 
 });
 
-router.get('/anvandare/:id', function(req, res, next) {
+router.post('/anvandare/:id', function(req, res, next) {
 
 	User.find( ).then(function(anvandare) {
 

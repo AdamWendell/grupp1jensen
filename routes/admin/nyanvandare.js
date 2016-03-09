@@ -15,11 +15,11 @@ router.get('/nyanvandare', function(req, res, next) {
 			anvID = anvandare.length;
 
 		}
-		
+
 		else {
 
 			anvID = anvandare[anvandare.length-1].id;
-		
+
 		}
 
 		console.log(anvID);
@@ -67,7 +67,7 @@ router.post('/nyanvandare', function(req, res, next) {
 
 	    });
 
-		res.redirect('/admin/nyanvandare');
+		res.redirect('nyanvandare');
 	   	res.end();
 
    	}

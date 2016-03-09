@@ -12,7 +12,11 @@
 			<ol>
 
 				<% anvandare.forEach(function(anv) { %>
-				<li><a href="/admin/anvandare/<%= anv.id %>"><%= anv.name %></a></li>
+				<li>
+					<form action="anvandare/<%= anv.id %>" method="post">
+						<button><%= anv.name %></button>
+					</form>
+				</li>
 				<!--<li><a href="/admin/anvandare/<%= anv._id %>"><%= anv.name %></a></li>-->
 
 				<% }); %>
@@ -21,7 +25,7 @@
 		</div>
 		<div class="userinfo">
 
-			<a href="/admin/nyanvandare/"><button>Lägg till användare</button></a>
+			<a href="./nyanvandare"><button>Lägg till användare</button></a>
 			<a href="/admin/redigeraanvandare/<%= singel._id %>"><button>Administrera</button></a>
 
 			<img src="#" alt="user">
