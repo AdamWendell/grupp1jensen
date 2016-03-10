@@ -56,10 +56,12 @@
   <div>
     <label for="dragkrok">Dragkrok</label>
     <input type="checkbox" name="dragkrok" id="dragkrok">
-    <label for="tjanst">Tjänst</label>
-    <input type="radio" name="typ" id="tjanst" value="tjanst" required>
-    <label for="privat">Privat</label>
-    <input type="radio" name="typ" id="privat" value="privat" required>
+    <div>
+      <label for="tjanst">Tjänst</label>
+      <input type="radio" name="typ" id="tjanst" value="tjanst" required>
+      <label for="privat">Privat</label>
+      <input type="radio" name="typ" id="privat" value="privat" required>
+    </div>
   </div>
   <br>
   <div><button>Sök lediga bilar</button></div>
@@ -69,9 +71,9 @@
   <ul>
     <%if (locals.bilar){%>
       <% bilar.forEach(function(bil) { %>
-        <li>
-          <img src="/images/<%= bil.model.toLowerCase() %>.jpg" alt="bilen">
-          <p><%= bil.model + ' ' + bil.year%></p>
+        <li class="bil-container">
+          <div class="left"><img src="/images/<%= bil.model.toLowerCase() %>.jpg" alt="bilen"></div>
+          <div class="right"><p><%= bil.model + ' ' + bil.year%></p>
           <p><%= bil.bil%></p>
 
           <form action="bokabil" method="post">
@@ -81,7 +83,7 @@
             <input type="hidden" name="typ" value="<%= nyBokning.typ %>">
             <input type="hidden" name="">
             <button>Bokabil</button>
-          </form>
+          </form></div>
         </li>
       <%})%>
 

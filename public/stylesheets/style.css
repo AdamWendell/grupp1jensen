@@ -1,6 +1,6 @@
 body {
 margin-top: 40px;
-  
+
 }
 
 a {
@@ -11,8 +11,8 @@ a {
 /* *{margin: 0;padding: 0;} */
 img {
 
-	width: 70px;
-	height: 70px;
+	width: 150px;
+	height: 150px;
 
 }
 
@@ -24,7 +24,7 @@ img {
 
 .bil-container {
 
-	width: 50%;
+	width: 75%;
 	margin: 20px;
 	padding: 20px;
 	border: 1px solid black;
@@ -57,7 +57,7 @@ img {
 }
 
 /*.navdiv {
-	
+
 	height: 60px;
 	margin:auto;
 	width: 950px;
@@ -72,7 +72,7 @@ img {
 	background: #c6dcfb;
 	margin:auto;
 	overflow: hidden;
-	
+
 }
 .nav li{float: left;
 	margin-top: 40px;

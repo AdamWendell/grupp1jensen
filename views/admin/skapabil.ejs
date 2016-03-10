@@ -7,6 +7,8 @@
 </head>
 <body>
 <% include ../partials/navadmin.ejs %>
+
+<%if (locals.thanks){%> <h4>Du har skapat <%= bil %></h4> <% } %>
 <form action="skapabil" method="post">
   <input type="text" name="bil" id="" placeholder="Bilnamn ex. bil21"  required>
   <select name="biltyp" id="" required>

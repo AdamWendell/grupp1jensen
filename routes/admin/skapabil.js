@@ -33,7 +33,7 @@ router.post('/skapabil', function (req, res, next) {
     if (err) {
       next(err);
     } else {
-      res.render('./admin/skapabil');
+      res.render('./admin/skapabil',{thanks: true, bil: rb.bil});
     }
   })
 })
