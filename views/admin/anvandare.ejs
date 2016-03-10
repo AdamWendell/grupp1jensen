@@ -26,10 +26,11 @@
 		</div>
 		<div class="userinfo">
 
-			<a href="./nyanvandare"><button>Lägg till användare</button></a>
-			<a href="redigeraanvandare/<%= singel._id %>"><button>Administrera</button></a>
-
+			<a href="./nyanvandare"><button class="anvandare">Lägg till användare</button></a>
 			<img src="#" alt="user">
+			<a href="redigeraanvandare/<%= singel._id %>"><button class="administerera">Administrera</button></a>
+
+			
 			<p>Namn: <%= singel.name %></p>
 			<p>Telefonenr: <%= singel.mobil %></p>
 			<p>Avdelning: <%= singel.avdelning %></p>
