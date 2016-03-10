@@ -25,6 +25,7 @@ router.post('/skapabil', function (req, res, next) {
     vaxellada: rb.vaxellada,
     dragkrok: rb.dragkrok,
     regnummer: rb.regnummer,
+    drivmedel: rb.drivmedel,
     matarstallning: rb.matarstallning,
     besiktningperiod: besiktningDates(rb.regnummer),
     besiktningBokad: false

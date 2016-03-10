@@ -11,6 +11,7 @@ router.get('/felanmalan', function(req, res, next) {
 router.post('/felanmalan', function (req, res, next) {
   req.body.klar = false;
   req.body.skapad = dateHelper();
+  console.log(req.originalUrl);
 
   FelanmModel.create(req.body, (err, savedFelanm) => {
     if (err) {

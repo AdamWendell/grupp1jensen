@@ -63,13 +63,14 @@ router.post('/', (req, res, next) => {
 
 router.post('/bokabil', function (req, res, next) {
   req.body.aterlamnad = false;
+  req.body.user = parseInt(req.originalUrl.split('/')[1]);
 
   BokningModel.create(req.body, (err, savedBokning) => {
     if (err) {
       next(err);
     } else {
       console.log(savedBokning);
-      res.render('./anvandare/felanmalan', {thanks: true});
+      res.redirect('minabokningar');
     }
   })
 

@@ -1,8 +1,6 @@
 body {
-
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-
+margin-top: 40px;
+  
 }
 
 a {
@@ -59,29 +57,30 @@ img {
 }
 
 /*.navdiv {
-	font-family: helvetica;
+	
 	height: 60px;
 	margin:auto;
 	width: 950px;
 	padding: 0;
 	border: 1px solid black;
 }*/
-.nav{font-family: helvetica;
+.nav{
+	font-family: Arial;
 	list-style: none;
-	width: 930px;
-	height: 50px;
-	background: #829eaf;
+	width: 960px;
+	height: 100px;
+	background: #c6dcfb;
 	margin:auto;
 	overflow: hidden;
-	font-weight: bold;
+	
 }
 .nav li{float: left;
-	margin-top: 15px;
+	margin-top: 40px;
 
 }
-.nav a{color: white;
+.nav a{color: black;
 	text-decoration: none;
-	background: #829eaf;
+	background: #c6dcfb;
 	float: left;
 	font-size: 20px;
 	color:white;
@@ -89,38 +88,74 @@ img {
 	border-right: 1px solid white;
 }
 .nav a:hover{
-	background: #b9c9d2}
-.nav input{border-radius: 5px;}
+	background: #c6dcfb
+}
+.nav input{
+	border-radius: 5px;padding: 2px;margin-left: 15px;
+}
 .flexbox{
 	display: -webkit-flex;
     display: flex;
-    width: 960px;
-    margin: auto;
+    width: 1000px;
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    margin-top: 10px;
+    font-family: helvetica;
+    background-color: #ebebeb;
 }
 .userlist{
-	border:1px solid black;
-	width: 200px;
-	margin-top: 10px
+	border-right: 2px solid #c6dcfb;
+	width:200px;
+	margin-left:0px;
+	padding:0;
 }
+.userlist ol{margin:0px;padding: 0;list-style: none;}
+.userlist li{;padding-top: 5px;padding-bottom: 5px;;width: 200px;}
+.userlist button{margin-left: 10px;
+z-index: 0;
+background: #ebebeb;
+text-align: center;
+border: none;}
 .userinfo{
-width: 700px;
-margin: 10px;
-padding: 30px;
-border:1px solid black;
+width: 850px;
+margin-left: 10px;
+padding-left: 10px
+padding-right:50px;
 }
-.userinfo button{
-	
+.anvandare{
+	color: white;
 	float: right;
-	margin-top: 100px;
-
+	margin-top: 10px;
+	margin-right: 10px;
+	width: 190px;
+	height: 30px;
+	color: white;
+	background-color: black;
+	border: none;
+	z-index: 0;
+}
+.administerera{
+	color: white;
+	float: right;
+	width: 120px;
+	height: 30px;
+	border-radius: 5px;
+	background-color: black;
+	border: none;
+	z-index: 0;
 }
 .userinfo img{
 		float: right;
 }
 .bokdetatil{
+	font
 	width: 550px;
 	height: 70px;
-	border:solid black 3px;
+	/*border:3px solid #829eaf;*/
+	margin-left: 10px;
+	border-radius: 3px;
+	background-color: white;
 }
 .bilinfo{
 	margin: 20px;

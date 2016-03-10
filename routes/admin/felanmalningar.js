@@ -16,11 +16,12 @@ router.get('/felanmalningar', function(req, res, next) {
 
 
 router.post('/felanmalningar/:id', function (req, res, next) {
+  console.log(req.query);
   FelanmModel.findByIdAndUpdate(req.params.id, {klar: true, fixad: dateHelper() }, (err, updated) => {
     if (err) {
       next(err);
     } else {
-      res.redirect('/admin/felanmalningar')
+      res.redirect('/'+ req.originalUrl.split('/')[1] + '/admin/felanmalningar')
     }
   })
 })

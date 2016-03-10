@@ -61,7 +61,7 @@ router.post('/redigeraanvandare/:id', function(req, res, next) {
 
 		else {
 
-			res.redirect('/admin/anvandare');
+			res.redirect('../anvandare');
 
 			}
 

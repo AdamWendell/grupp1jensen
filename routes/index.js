@@ -16,7 +16,7 @@ router.post('/', function(req, res, next) {
         if(anvandare[0].admin) {
           res.redirect('/' + anvandare[0].id + '/admin/bilar');
         } else {
-          res.redirect('/' + anvandare[0].id + '/anvandare');
+          res.redirect('/' + anvandare[0].id + '/anvandare/');
         }
       } else {
         res.render('index', {felPw: true});

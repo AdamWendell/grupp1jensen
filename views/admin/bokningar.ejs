@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+    <title></title>
+
+    	<link rel='stylesheet' href='/stylesheets/style.css' />
+
+	</head>
+
+	<body>
+	  <% include ../partials/navadmin %>
+		<% if (locals.aktBok) {%>
+		<h2>Aktuella</h2>
+
+		<% aktBok.forEach( function (bokBilarr) { %>
+		<ul class="bil-container">
+			<div class="left">
+		  		<img src="/images/<%= bokBilarr[1].model.toLowerCase() %>.jpg" />
+		  	</div>
+
+		  	<div class="right">
+			   	<ul>
+            <li>Start datum & tid: <%= bokBilarr[0].from.split('T')[0] + ' ' + bokBilarr[0].from.split('T')[1]%></li>
+            <li>Slut datum & tid: <%= bokBilarr[0].tom.split('T')[0] + ' ' + bokBilarr[0].tom.split('T')[1]%></li>
+            <li>Bil: <%= bokBilarr[1].bil  %></li>
+			   		<li>Modell: <%= bokBilarr[1].bilmarke %> <%= bokBilarr[1].model %></li>
+			   		<li>Drivmedel: <%= bokBilarr[1].drivmedel  %></li>
+			   		<li>Växellåda: <%= bokBilarr[1].vaxellada %></li>
+			   		<li>Drivhjul: <%= bokBilarr[1].drivhjul %></li>
+            <li>Användar-ID: <%= bokBilarr[0].user %> </li>
+            <button>återlämna</button>
+			   	</ul>
+			</div>
+
+		</ul>
+		<%})%>
+		<%}%>
+
+		<% if (locals.komBok) {%>
+		<h2>Kommande</h2>
+
+
+		<% komBok.forEach( function (bokBilarr) { %>
+		<ul class="bil-container">
+			<div class="left">
+					<img src="/images/<%= bokBilarr[1].model.toLowerCase() %>.jpg" />
+				</div>
+
+				<div class="right">
+					<ul>
+            <li>Start datum & tid: <%= bokBilarr[0].from.split('T')[0] + ' ' + bokBilarr[0].from.split('T')[1]%></li>
+            <li>Slut datum & tid: <%= bokBilarr[0].tom.split('T')[0] + ' ' + bokBilarr[0].tom.split('T')[1]%></li>
+            <li>Bil: <%= bokBilarr[1].bil  %></li>
+						<li>Modell: <%= bokBilarr[1].bilmarke %> <%= bokBilarr[1].model %></li>
+						<li>Drivmedel: <%= bokBilarr[1].drivmedel  %></li>
+						<li>Växellåda: <%= bokBilarr[1].vaxellada %></li>
+						<li>Drivhjul: <%= bokBilarr[1].drivhjul %></li>
+            <li>Användar-ID: <%= bokBilarr[0].user %> </li>
+					</ul>
+			</div>
+
+		</ul>
+		<%})%>
+		<%}%>
+
+		<% if (locals.tidBok) {%>
+		<h2>Tidigare</h2>
+
+
+
+		<% komBok.forEach( function (bokBilarr) { %>
+		<ul class="bil-container">
+			<div class="left">
+					<img src="/images/<%= bokBilarr[1].model.toLowerCase() %>.jpg" />
+				</div>
+
+				<div class="right">
+					<ul>
+            <li>Start datum & tid: <%= bokBilarr[0].from.split('T')[0] + ' ' + bokBilarr[0].from.split('T')[1]%></li>
+            <li>Slut datum & tid: <%= bokBilarr[0].tom.split('T')[0] + ' ' + bokBilarr[0].tom.split('T')[1]%></li>
+            <li>Bil: <%= bokBilarr[1].bil  %></li>
+						<li>Modell: <%= bokBilarr[1].bilmarke %> <%= bokBilarr[1].model %></li>
+						<li>Drivmedel: <%= bokBilarr[1].drivmedel  %></li>
+						<li>Växellåda: <%= bokBilarr[1].vaxellada %></li>
+						<li>Drivhjul: <%= bokBilarr[1].drivhjul %></li>
+            <li>Användar-ID: <%= bokBilarr[0].user %> </li>
+					</ul>
+			</div>
+
+		</ul>
+		<%})%>
+		<%}%>
+  </body>
+
+</html>

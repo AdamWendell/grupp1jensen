@@ -7,7 +7,7 @@
   <body>
     <h2>Redigera användare</h2>
 
-    <form action="/admin/redigeraanvandare/<%= redanv._id %>" method="POST">
+    <form action="<%= redanv._id %>" method="POST">
 
       <label for="id">Id:</label><br>
       <input type="text" name="id" id="id" value="<%= redanv.id %>" /><br><br>
@@ -20,7 +20,7 @@
 
       <label for="avdelning">Avdelning: <%= redanv.avdelning %></label><br>
       <select name="avdelning" id="avdelning">
-      
+
         <option name="valj" id="valj" value="valj">Välj</option>
         <option name="eoa" id="eoa" value="Ekonomi och Administration">Ekonomi och Administration</option>
         <option name="hr" id="hr" value="HR">HR</option>
@@ -35,9 +35,9 @@
       <input type="radio" name="type" id="normal" checked="true" value="false" />
       <label for="normal">Normal</label><br><br>
     	<label for="password">Lösenord:</label><br>
-    	<input type="password" name="password" id="password" value="redanv.pwd" /><br><br>
+    	<input type="password" name="password" id="password" value="<%=redanv.pwd %>" /><br><br>
       <label for="password">Lösenord igen:</label><br>
-      <input type="password" name="password" id="password" value="redanv.pwd" /><br><br>
+      <input type="password" name="password" id="password" value="<%= redanv.pwd %>" /><br><br>
     	<input type="submit" name="login" id="login" value="Uppdatera" />
 
     </form>

@@ -13,7 +13,7 @@ router.get('/bilar', function(req, res, next) {
 router.post('/bilar', function(req, res, next) {
   console.log(req.body.sokbil)
   BilarModel.find({bil: req.body.sokbil}).then((bil) => {
-    console.log(bil.model);
+    console.log(bil[0].model);
     res.render('./admin/bilar', {bil: bil[0]});
   }, (err) => {})})
 

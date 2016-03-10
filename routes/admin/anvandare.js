@@ -24,8 +24,8 @@ router.get('/anvandare', function(req, res, next) {
 
 });
 
-router.post('/anvandare/:id', function(req, res, next) {
-
+router.post('/anvandare', function(req, res, next) {
+	console.log(req.body);
 	User.find( ).then(function(anvandare) {
 
 		var obj = new Object();
@@ -33,7 +33,7 @@ router.post('/anvandare/:id', function(req, res, next) {
 		for (i in anvandare) {
 			//console.log(anvandare[i].id);
 
-			if (anvandare[i].id==req.params.id) {
+			if (anvandare[i].id==req.body.id) {
 
 				obj._id = anvandare[i]._id;
 				obj.name = anvandare[i].name;

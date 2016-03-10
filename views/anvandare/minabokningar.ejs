@@ -1,80 +1,87 @@
 <!DOCTYPE html>
 <html>
-	
+
 	<head>
-    
+
     <title></title>
-    
+
     	<link rel='stylesheet' href='/stylesheets/style.css' />
-	
+
 	</head>
-  
+
 	<body>
 	    <% include ../partials/nav %>
-
+		<% if (locals.aktBok) {%>
 		<h2>Aktuella</h2>
 
-		<div class="bil-container">
-
+		<% aktBok.forEach( function (bokBilarr) { %>
+		<ul class="bil-container">
 			<div class="left">
-		  		<img src="bil.jpg" />
+		  		<img src="/images/<%= bokBilarr[1].model.toLowerCase() %>.jpg" />
 		  	</div>
 
 		  	<div class="right">
 			   	<ul>
-			   		
-			   		<li>Modell: <%= model %></li>
-			   		<li>Drivmedel: <%= drivmedel %></li>
-			   		<li>Växellåda: <%= vaxellada %></li>
-			   		<li>Drivhjul: <%= drivhjul %></li>
 
-			   	</ul>
-			</div>    	
-    	</div>
-
-    	<h2>Kommande</h2>
-
-		<div class="bil-container">
-  			
-
-			<div class="left">
-		  		<img src="bil.jpg" />
-		  	</div>
-
-		  	<div class="right">
-			   	<ul>
-			   		
-			   		<li>Modell: <%= model %></li>
-			   		<li>Drivmedel: <%= drivmedel %></li>
-			   		<li>Växellåda: <%= vaxellada %></li>
-			   		<li>Drivhjul: <%= drivhjul %></li>
-
-			   	</ul>
-			</div>	
-    	</div>
-  		
-  		<h2>Tidigare</h2>
-
-    	<div class="bil-container">
-  			
-
-			<div class="left">
-		  		<img src="bil.jpg" />
-		  	</div>
-
-		  	<div class="right">
-			   	<ul>
-			   		
-			   		<li>Modell: <%= model %></li>
-			   		<li>Drivmedel: <%= drivmedel %></li>
-			   		<li>Växellåda: <%= vaxellada %></li>
-			   		<li>Drivhjul: <%= drivhjul %></li>
-
+			   		<li>Modell: <%= bokBilarr[1].bilmarke %> <%= bokBilarr[1].model %></li>
+			   		<li>Drivmedel: <%= bokBilarr[1].drivmedel  %></li>
+			   		<li>Växellåda: <%= bokBilarr[1].vaxellada %></li>
+			   		<li>Drivhjul: <%= bokBilarr[1].drivhjul %></li>
 			   	</ul>
 			</div>
-	    	
-    	</div>
-    
+
+		</ul>
+		<%})%>
+		<%}%>
+
+		<% if (locals.komBok) {%>
+		<h2>Kommande</h2>
+
+
+		<% komBok.forEach( function (bokBilarr) { %>
+		<ul class="bil-container">
+			<div class="left">
+					<img src="/images/<%= bokBilarr[1].model.toLowerCase() %>.jpg" />
+				</div>
+
+				<div class="right">
+					<ul>
+
+						<li>Modell: <%= bokBilarr[1].bilmarke %> <%= bokBilarr[1].model %></li>
+						<li>Drivmedel: <%= bokBilarr[1].drivmedel  %></li>
+						<li>Växellåda: <%= bokBilarr[1].vaxellada %></li>
+						<li>Drivhjul: <%= bokBilarr[1].drivhjul %></li>
+					</ul>
+			</div>
+
+		</ul>
+		<%})%>
+		<%}%>
+
+		<% if (locals.tidBok) {%>
+		<h2>Tidigare</h2>
+
+
+
+		<% komBok.forEach( function (bokBilarr) { %>
+		<ul class="bil-container">
+			<div class="left">
+					<img src="/images/<%= bokBilarr[1].model.toLowerCase() %>.jpg" />
+				</div>
+
+				<div class="right">
+					<ul>
+
+						<li>Modell: <%= bokBilarr[1].bilmarke %> <%= bokBilarr[1].model %></li>
+						<li>Drivmedel: <%= bokBilarr[1].drivmedel  %></li>
+						<li>Växellåda: <%= bokBilarr[1].vaxellada %></li>
+						<li>Drivhjul: <%= bokBilarr[1].drivhjul %></li>
+					</ul>
+			</div>
+
+		</ul>
+		<%})%>
+		<%}%>
   </body>
 
 </html>
