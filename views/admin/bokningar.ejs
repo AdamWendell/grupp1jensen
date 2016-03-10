@@ -60,8 +60,8 @@
 						<li>Växellåda: <%= bokBilarr[1].vaxellada %></li>
 						<li>Drivhjul: <%= bokBilarr[1].drivhjul %></li>
             <li>Användar-ID: <%= bokBilarr[0].user %> </li>
-						<form action="bokningar" method="post">
-						  <input type="hidden" name="id" value="<%= bokBilarr[0].id %>">
+						<form action="bokningar" method="post" onsubmit="return confirm('Vill du verkligen avboka?');">
+						  <input type="hidden" name="id" value="<%= bokBilarr[0].id %>" >
               <button>Avboka</button>
             </form>
 					</ul>
