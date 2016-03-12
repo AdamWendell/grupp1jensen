@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 
-
+// Bil schema that creates strukture too how the bil documents should be stored in mongo
 var BilSchema = new mongoose.Schema({
   bil: {
     type: String,
