@@ -1,3 +1,4 @@
+// A function that creates a formated date. For Felanamalans. So that we can call this function when we create one and when we complte it.
 exports.dater = function () {
   var dateObj = new Date();
   var month = dateObj.getUTCMonth() + 1; //months from 1-12
@@ -10,7 +11,7 @@ exports.dater = function () {
   return newdate;
 }
 
-
+// A function that sets the besiktnings period based on the last numbers in the registration.
 exports.besiktningDates = function (str) {
   var lastChar = str.substr(str.length - 1);
   switch (lastChar) {
@@ -37,6 +38,7 @@ exports.besiktningDates = function (str) {
   }
 }
 
+// Compares boknings dates too se if a booked time collides with already booked cars.
 exports.comparer = (bokningFrom, bokningTom, reqFrom, reqTom ) => {
  var from = reqFrom;
  var tom = reqTom;
