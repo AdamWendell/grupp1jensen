@@ -2,25 +2,25 @@ var mongoose = require('mongoose');
 
 
 var FelanmalanSchema = new mongoose.Schema({
-  "bil": {
+  bil: {
     type: String,
     required: true,
   },
-  "omrade": {
+  omrade: {
     type: String,
     required: true
   },
-  "beskrivning": {
+  beskrivning: {
     type: String,
     required: false
   },
-  "klar": {
+  klar: {
     type: Boolean
   },
-  "skapad": {
+  skapad: {
     type: String
   },
-  "fixad": {
+  fixad: {
     type: String
   }
 });
