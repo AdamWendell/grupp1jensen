@@ -36,7 +36,7 @@ router.post('/', (req, res, next) => {
   // Hämta alla bilar som matchar sökningen.
   BilarModel.find(sokObj).then((bilar) => {
     BokningModel.find().then( function (bokningar) {
-    // Efter det hämta alla bokningar. Filtrera bort alla bokningar som krockar
+    // Efter det hämta alla bokningar. Filtrera bort alla bokningar som inte koliderar med den nya bokningen.
       var bokade = bokningar.filter((value) => {
         return comparer(Date.parse(value.from), Date.parse(value.tom), Date.parse(req.body.from), Date.parse(req.body.tom))
       }).map((bokning) => {
